@@ -1,0 +1,160 @@
+/* ========= VARIABLES ========== */
+:root {
+    --color-primario: #95bff0;        /* Azul intelectual */
+    --color-secundario: #c3c0b6;      /* Verde creatividad */
+    --color-detalle: #584515;         /* Amarillo cálido */
+    --color-boton: #3f2e17;           /* Rosa afectivo */
+    --color-hover: #6a5b4e;           /* Gris elegante */
+    --color-texto: #FFFFFF;           /* Blanco */
+    --radio: 12px;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ========= ESTILOS GENERALES ========== */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--color-secundario);
+    text-decoration: none;
+  }
+
+  
+  h1 {
+    color: var(--color-texto);
+    margin-bottom: 0.5em;
+  }
+
+  h2 h3 {
+    color: var(--color-secundario);
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    margin: 0.5em 0;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  /* ========= HEADER ========== */
+  header {
+    text-align: center;
+    background-color: var(--color-primario);
+    padding: 2rem 1rem;
+    border-bottom: 4px solid var(--color-detalle);
+    box-shadow: var(--sombra);
+  }
+  
+  .texto-parpadeo {
+    font-size: 1.2rem;
+    animation: parpadeo 2s infinite;
+    color: var(--color-detalle);
+  }
+  
+  /* ========= GALERÍA ========== */
+  .galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .tarjeta {
+    background-color: var(--color-hover);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tarjeta img {
+    width: 100%;
+    display: block;
+    margin: 1rem auto;  /* centra horizontalmente */
+    border-radius: 8px;
+  }
+  
+  .contenido {
+    padding: 1rem;
+  }
+  
+  mark {
+    background-color: var(--color-primario);
+    padding: 0 4px;
+    border-radius: 4px;
+  }
+  
+  /* ========= BOTÓN ========== */
+  .boton {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radio);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton:hover {
+    background-color: var(--color-boton);
+  }
+  
+  /* ========= GRID ========== */
+  .contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .contenedor-grid div {
+    background-color: var(--color-hover);
+    padding: 1rem;
+    border-radius: var(--radio);
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* animación suave */
+  }
+    /* Efecto hover */
+  .contenedor-grid div:hover {
+    transform: translateY(-5px);       /* sube un poco */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* sombra más intensa */
+    background-color: var(--color-boton); /* opcional: cambia color de fondo */
+  }
+  
+  /* ========= FOOTER ========== */
+  footer {
+    background-color: var(--color-primario);
+    padding: 1rem;
+    border-top: 2px solid var(--color-detalle);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* ========= ANIMACIONES ========== */
+  @keyframes parpadeo {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+  

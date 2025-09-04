@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Tarea 2 Formulario</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+        <script src='main.js'></script>
+</head>
+<body>
+        <header>
+                <h1>Encuesta de autoconocimiento</h1>         
+                <p>En esta encuesta podrás mostrar tus gustos e 
+                        intereses, así como rasgos de ti 
+                        para conectar con más gente con tus mismos intereses
+                </p>
+        </header>
+
+        <main>
+                <form id="miFormulario">
+                        <!-- Campo de texto 1 -->
+                        <label for="nombre">Nombre completo:</label><br>
+                        <input type="text" id="nombrePersona" name="caracteristica" required placeholder="Nombre(s) Apellidos"><br>
+
+                         <!-- Campo de texto 2 -->
+                        <label for="caracteristica">Número de teléfono:</label><br>
+                        <input type="text" id="caracteristica" name="caracteristica" required placeholder="XX-XXX-XXXX"><br>
+                        
+                        <!-- Campo de selección o lista (<select>, <datalist> o radio) -->
+                        
+                        <p>Selecciona tu genero de cine preferido</p>
+                        <input type="radio" id="romantico" name="genero_favorito" value="romantico">
+                        <label for="romantico">Romántico</label><br>
+                        <input type="radio" id="accion" name="genero_favorito" value="accion">
+                        <label for="accion">Acción</label><br>
+                        <input type="radio" id="terror" name="genero_favorito" value="terror">
+                        <label for="terror">Terror</label><br>
+                        <input type="radio" id="suspenso" name="genero_favorito" value="suspenso">
+                        <label for="suspenso">Suspenso</label><br>
+                        <input type="radio" id="animado" name="genero_favorito" value="animado">
+                        <label for="animado">Animado</label><br>
+                        <!--     -->
+                        <input type="text" id="otro_genero" name="otro" required placeholder="Otro, escribir cuál"><br>
+                        
+
+
+                </form>
+
+
+                <form>
+                </form>
+        </main>
+</body>
+</html>

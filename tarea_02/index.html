@@ -6,7 +6,7 @@
         <title>Tarea 2 Formulario</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-        <script src='main.js'></script>
+<!--         <script src='script.js'></script> -->
 </head>
 <body>
         <header>
@@ -23,13 +23,19 @@
                         <label for="nombre">Nombre completo:</label><br>
                         <input type="text" id="nombrePersona" name="caracteristica" required placeholder="Nombre(s) Apellidos"><br>
 
-                         <!-- Campo de texto 2 -->
+                        <!-- Campo de texto 2 -->
                         <label for="caracteristica">Número de teléfono:</label><br>
-                        <input type="text" id="caracteristica" name="caracteristica" required placeholder="XX-XXX-XXXX"><br>
+                        <input type="text" id="telefono" name="caracteristica" required placeholder="XX-XXX-XXXX"><br>
+                        
+                        <!-- campo de fecha o número -->
+                        <label for="birthday">Fecha de nacimiento:</label><br>
+                        <input type="date" id="birthday" name="birthday">
+                        
                         
                         <!-- Campo de selección o lista (<select>, <datalist> o radio) -->
                         
                         <p>Selecciona tu genero de cine preferido</p>
+
                         <input type="radio" id="romantico" name="genero_favorito" value="romantico">
                         <label for="romantico">Romántico</label><br>
                         <input type="radio" id="accion" name="genero_favorito" value="accion">
@@ -40,16 +46,44 @@
                         <label for="suspenso">Suspenso</label><br>
                         <input type="radio" id="animado" name="genero_favorito" value="animado">
                         <label for="animado">Animado</label><br>
-                        <!--     -->
-                        <input type="text" id="otro_genero" name="otro" required placeholder="Otro, escribir cuál"><br>
+                        <input type="text" id="otro_genero" name="otro" placeholder="Otro, escribir cuál"><br>
                         
-
+                        <button type="submit">Enviar</button>
 
                 </form>
+                <script>
+                        const radios = document.querySelectorAll('input[name="genero_favorito"]');
+                        const otroGenero = document.getElementById("otro_genero");
 
-
-                <form>
-                </form>
+                        radios.forEach(radio => {
+                                radio.addEventListener("change", () => {
+                                        if (radio.value === "otro") {
+                                                otroGenero.disabled = false;
+                                                otroGenero.required = true;
+                                        } else {
+                                                otroGenero.disabled = true;
+                                                otroGenero.required = false;
+                                                otroGenero.value = "";
+                                        }
+                                });
+                        });
+                
+                        document.getElementById("miFormulario").addEventListener("submit", (e) => {
+                                e.preventDefault();
+                        
+                                const nombre = document.getElementById("nombrePersona").value;
+                                const telefono = document.getElementById("telefono").value;
+                                const cumpleanos = document.getElementById("birthday").value;
+                                const genero = document.querySelector('input[name="genero_favorito"]:checked')?.value;
+                                const otro = otroGenero.value;
+                                
+                                console.log("Nombre: "+nombre+"\n", 
+                                "Número teléfonico: "+telefono+"\n",
+                                "Cumpleaños: "+cumpleanos+"\n",
+                                "Genero de cine preferido: "+genero+""+otro);
+                        });
+                </script>
+               
         </main>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopta UNAMigo Peludo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header class="contenedor">
+        <h1>Adopt(a) UNAMigo Peludo</h1>
+        <!--p class="texto-parpadeo">Explora y encuentra a tu nuevo compañero</p-->
+    </header>
+
+    <main class="contenedor">
+
+        <section class="galeria">
+
+            <article class="tarjeta contenedor">
+
+                <h1 class="adopta-seccion" text-align: center;>
+                    Registra una mascota
+                </h1>
+
+                <img src="Berlincito.jpg" alt="Gato Siamés"
+                    style="width: 50%; border-radius: 8px; text-align: center;" />
+
+                <div class="contenido">
+                    <form id="miFormulario">
+                        <!-- NOMBRE -->
+                        <label for="nombreMascota">Nombre de la mascota:</label>
+                        <input type="text" id="nombreMascota" required placeholder="nombre"><br>
+
+                        <!-- EDAD -->
+                        <label for="edad">Edad:</label>
+                        <input type="text" id="edad" required placeholder="edad"><br>
+
+                        <!-- ESPECIE -->
+                        <label for="especie">Especie:</label>
+                        <select id="especie" required>
+                            <option value="">--Selecciona--</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Perro">Perro</option>
+                            <option value="Pez">Pez</option>
+                            <option value="Reptil">Réptil</option>
+                            <option value="Ave">Ave</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                        <input type="text" id="otra_especie" placeholder="Otro, escribir cuál" disabled><br>
+
+                        <!-- IMAGEN -->
+                        <label for="imagenMascota">Imagen de la mascota (opcional):</label>
+                        <input type="file" id="imagenMascota" accept="image/*"><br>
+
+                        <!-- VACUNADO -->
+                        <p>Vacunado</p>
+                        <input type="radio" id="si" name="vacunado" value="Si">
+                        <label for="si">Sí</label>
+                        <input type="radio" id="no" name="vacunado" value="No">
+                        <label for="no">No</label><br>
+
+                        <!-- DESCRIPCIÓN -->
+                        <p><label for="descripcion">Describe al animal:</label></p>
+                        <textarea id="descripcion" rows="4" cols="50">Descripción adicional del animal</textarea>
+                        <br>
+
+                        <!-- BOTÓN SUBMIT -->
+                        <button type="submit">Registrar</button>
+                    </form>
+
+                    <!-- CONTADOR -->
+                    <p id="contadorMascotas"><strong>Mascotas registradas:</strong> 0</p>
+
+                </div>
+            </article>
+        </section>
+
+        <section id="tarjetas" class="contenedor-grid">
+            <h1 style="grid-column: 1 / -1; text-align: center; color: blueviolet ;margin-bottom: 1rem;">
+                Mascotas Registradas
+            </h1>
+            <!-- Aquí se agregarán las tarjetas dinámicamente -->
+        </section>
+    </main>
+
+    <footer class="contenedor" style="text-align: center; margin-bottom: 2rem;">
+        <p>Contacto: <a href="mailto:pmartinez@ciencias.unam.mx"; style="color: blueviolet;">pmartinez@ciencias.unam.mx</a></p>
+        <small>© 2025 Exidis</small>
+    </footer>
+</body>
+
+</html>
